@@ -26,6 +26,14 @@ class ProductController extends Controller
             $query->where('stock', '<=', $request->stock_max);
         }
 
+        //Filtrage par nom
+        if ($request->has('search') && $request->search != '') {
+            $query->where('name', 'like', '%' . $request->search . '%');
+        }
+        
+        //$products = $query->paginate(5); // Pagination
+
+
         $products = $query->get();
         $categories = Category::all();
 

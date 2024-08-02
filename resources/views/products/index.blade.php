@@ -5,6 +5,16 @@
     <div class="container">
         <h1>Liste des Produits</h1>
 
+        <div class="mb-4">
+            <a href="{{ route('products.create') }}" class="btn btn-primary">Ajouter un Produit</a>
+        </div>
+
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <form method="GET" action="{{ route('products.index') }}">
             <div class="form-row">
                 <div class="col-md-3">
@@ -20,6 +30,9 @@
                 </div>
                 <div class="col-md-2">
                     <input type="number" name="stock_max" class="form-control" placeholder="Stock max" value="{{ request('stock_max') }}">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" name="search" class="form-control" placeholder="Recherche par nom" value="{{ request('search') }}">
                 </div>
                 <div class="col-md-2">
                     <button type="submit" class="btn btn-primary">Filtrer</button>
@@ -43,5 +56,9 @@
                 </div>
             @endforeach
         </div>
+
+        <!-- Pagination Links 
+        <div class="d-flex justify-content-center mt-4">
+        </div>-->
     </div>
 @endsection
