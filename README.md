@@ -4,6 +4,34 @@ Titre du projet: Gestion de produits e-commerce
 
 Ce projet est une application de back-office pour un site e-commerce, développée avec Laravel. Il permet de gérer les produits, les catégories, les stocks, et d'effectuer diverses opérations administratives nécessaires pour le bon fonctionnement du site.
 
+## Installation
+
+### Prérequis
+
+- PHP 8.3.8
+- Composer
+- MySQL
+
+### Étapes d'Installation
+
+1. **Cloner le Répertoire :**
+
+   ```bash
+   git clone https://github.com/Bovisaloukou/TP-Laravel
+   cd TP-Laravel
+
+2. **Installer les Dépendances :**
+    composer install
+
+3. **Configurer les Variables d'Environnement :**
+    cp .env.example .env
+
+4. **Exécuter les Migrations et Seeder :**
+    php artisan migrate --seed
+
+5. **Lancer le Serveur :**
+    php artisan serve
+
 ## Fonctionnalités
 
 - **Gestion des Produits :**
